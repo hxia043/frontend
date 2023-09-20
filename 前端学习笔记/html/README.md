@@ -36,6 +36,7 @@ HTML 5 规范声明：标题应该用 ​"h1-h6"​ 标签表示，被强调的�
 
 注：为什么不推荐使用，这里涉及到网页开发的演进。当表示层和内容层分离时，css 关注表示层，html 关注内容层。原先定义在 html 中的表示层标签也将 Deprecated。同时，对于某些没有语义信息的标签，如 b，可以被更具有语义信息的 strong 标签取代。详细了解参考 [答疑解惑：为什么某些HTML元素被弃用？](https://blog.csdn.net/duninet/article/details/106226191)。
 
+![废弃标签](./废弃标签.png)
 
 **块级元素**  
 div、h1~h6、blockquote、dl、dt、dd、form、hr、ol、p、pre、table、ul...
@@ -58,6 +59,18 @@ span、a、b、br、code、em、i、img、input、label、select、textarea...
 设置​ a ​元素的 ​href ​属性值为井号 ​# ​加上想跳转区域对应的 ​id ​属性值，这样就可以创建一个内部跳转。  
 ​id ​是用来描述网页元素的一个属性，它的值在整个页面中唯一。  
 
+<u>位置</u>
+
+**text-align** 
+
+文本对齐，这里的对齐是在文本标签块内对齐。
+
+<u>代码约定</u>  
+- 请始终定义图像尺寸。这样做会减少闪烁，因为浏览器会在图像加载之前为图像预留空间。思考，浏览器是怎么做的？
+
 ## 参考
 
 [HTML 标签参考手册](https://www.w3school.com.cn/tags/index.asp)
+[w3cshool 编程实战](https://www.w3cschool.cn/codecamp/list)
+[HTML 实体符号参考手册](https://www.w3school.com.cn/charsets/ref_html_8859.asp)
+[HTML 状态消息](https://www.w3school.com.cn/tags/html_ref_httpmessages.asp)
