@@ -41,3 +41,52 @@ function args_return(x, y) {
 }
 ```
 
+## 变量，作用域和内存问题
+
+变量分基本类型和引用类型，函数中参数是值传递，要注意引用类型在函数中的传递。示例如：
+```
+var c = new Object;
+
+function getName(obj) {
+    obj.name = "hxia";
+    obj = new Object;
+    obj.name = "huyun";
+}
+
+getName(c)
+alert(c.name)
+```
+
+函数中变量的作用域和执行环境挂钩，全局执行环境是宿主环境 `window` 对象。如示例：
+```
+var a = 1
+
+function context() {
+    var a = 2
+    alert(a)
+
+    window.a = 1
+    alert(window.a)
+}
+
+context()
+alert(a)
+```
+
+全局变量 `a` 是挂在宿主环境 `window` 对象下的。
+
+同时，不同于其它语言（通过大括号构造）的块作用域，`Javascript` 没有块作用域。
+```
+if (true) {
+    var d = 1
+}
+
+alert(d)    // d: 1
+```
+
+内存问题是个很有意思的问题，也是值得研究的问题。  
+不少语言都有垃圾回收机制，通过标记清除结合垃圾定时回收机制清理内存。了解到这个程度还不够，要到标记怎么被标记的，垃圾怎么被清楚的才算是了解了垃圾回收的原理。
+
+这部分留个作业，作为后续攻关课题，可以结合 `Go` 和 `Javascript` 对比学习这块。
+
+对于 `Javascript` 来说，最佳实践是不需要的引用变量要置为 `null`，以便垃圾收集器下次运行时将其回收。
